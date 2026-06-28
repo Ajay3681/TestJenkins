@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 @Slf4j
 @Service
@@ -34,7 +35,10 @@ public class ShipmentAsnService {
                 .setParameter("asn", 1)
                 .executeUpdate();
         log.info("asn1: {}", asn1);
+        List<ShipmentAsn>list= new ArrayList<>();
+        list.add(asn1);
 
-        return null;
+
+        return list;
     }
 }
